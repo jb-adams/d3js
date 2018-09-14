@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Here, I will be drawing some simple SVG with the HTML svg tag</h1>
+    <svg width="400" height="200"> <!-- Define dimensions of SVG window -->
+
+      <!--
+        Define rectangle with x and y start coordinate, width, and height
+        we can also include a fill color, stroke color, stroke width
+      -->
+      <rect x="0" y="0" width="50" height="50" fill="green" stroke="grey" stroke-width="5px">
+      </rect>
+
+      <!--
+        Define circle with cx and cy, representing the center coordinate
+        also define its radius
+        we can also include fill color, stroke color, etc
+      -->
+      <circle cx="90" cy="25" r="25" fill="red"></circle>
+
+      <!--
+        Define ellipses like circles, except we define both an x radius (rx)
+        and a y radius (ry)
+      -->
+      <ellipse cx="145" cy="25" rx="15" ry="25" fill="grey"></ellipse>
+
+      <!--
+        Define straight lines by defining the start position (x1 and y1)
+        and the end position (x2 and y2)
+      -->
+      <line x1="185" y1="5" x2="230" y2="40" stroke="blue" stroke-width="5"></line>
+
+      <!--
+        Define text with its start position (x and y), and font size
+      -->
+      <text x="260" y="25" font-size="20px" fill="orange">Hello World</text>
+      <!--
+        for text, use the "text-anchor" attribute to define what
+        point of text the x and y coordinate refer to (start, middle, end)
+      -->
+      <text x="300" y="40" font-size="20px" fill="purple" text-anchor="middle">Hello World</text>
+
+      <!--
+        Define paths to create lines, curves, arcs, complex shapes
+        we define a path like this:
+      -->
+      <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent" />
+
+
+    </svg>
+
+  </body>
+</html>
