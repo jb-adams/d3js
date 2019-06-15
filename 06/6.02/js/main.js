@@ -38,13 +38,35 @@ var y = d3.scaleLinear()
 					.range([pHeight, 0]);
 
 var popScale = d3.scaleLinear()
-								 .domain([0, 1000000])
+								 .domain([0, 5000000])
 								 .range([5, 25]);
 
 var color = d3.scaleOrdinal()
 								.domain(["europe", "asia", "americas", "africa"])
 								.range(["#8dd3c7", "#ffffb3", "#bebada", "#fb8072",
- 												"#80b1d3", "#fdb462"])
+ 												"#80b1d3", "#fdb462"]);
+
+// hardcoded legend
+var continents = ["europe", "asia", "americas", "africa"];
+var legend = pGroup.append("g")
+									 .attr("transform", "translate(" + (pWidth - 10) +
+								 				 "," + (pHeight-125) + ")");
+
+continents.forEach(function(continent, i) {
+	var legendRow = legend.append("g")
+												.attr("transform", "translate(0, " + (i * 20) + ")");
+	legendRow.append("rect")
+						.attr("width", 10)
+						.attr("height", 10)
+						.attr("fill", color(continent));
+
+	legendRow.append("text")
+						.attr("x", -10)
+						.attr("y", 10)
+						.attr("text-anchor", "end")
+						.style("text-transform", "capitalize")
+						.text(continent);
+});
 
 // var color = d3.scaleOrdinal()
 //  								.range(["RED", "BLUE", "ORANGE", "GREEN"])
